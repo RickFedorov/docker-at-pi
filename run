@@ -1,0 +1,5 @@
+docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --name stats  portainer/portainer
+docker run --init -d --name="homea" -e "TZ=Europe/Prague" -v /home/pi/homeassistant:/config --net=host homeassistant/raspberrypi3-homeassistant:stable
+
+docker start homea
+docker start stats
